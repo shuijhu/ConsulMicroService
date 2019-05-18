@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
+using Ocelot.Provider.Consul;
+using System;
 
 namespace HeLian.Xiaoyi.GatewayAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration)   
         {
             Configuration = configuration;
         }
@@ -25,7 +22,18 @@ namespace HeLian.Xiaoyi.GatewayAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            Action<IdentityServerAuthenticationOptions> isaOptUser = option =>
+            {
+                option.Authority = Configuration["IdentityService:Uri"];
+                option.ApiName = "UserAPI";
+                option.RequireHttpsMetadata = Convert.ToBoolean(Configuration["IdentityService:UseHttps"]);
+                option.SupportedTokens = SupportedTokens.Both;
+                option.ApiSecret = Configuration["IdentityService:ApiSecrets:userservice"];
+            };
+            services.AddAuthentication()
+                .AddIdentityServerAuthentication("UserKey", isaOptUser);
+            services.AddOcelot().AddConsul();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,8 +49,9 @@ namespace HeLian.Xiaoyi.GatewayAPI
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseMvc();
+            //app.UseHttpsRedirection();
+            //app.UseMvc();
+            app.UseOcelot().Wait();
         }
     }
 }

@@ -14,7 +14,12 @@ namespace HeLian.Xiaoyi.GatewayAPI
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            CreateWebHostBuilder(args)
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+                    config.AddJsonFile("ocelot.json", false, true);
+                })
+                .Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

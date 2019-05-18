@@ -22,7 +22,7 @@ namespace HeLian.Xiaoyi.IdentityService
             var res = new List<Client>();
             res.Add(new Client()
             {
-                ClientId = "webapp",
+                ClientId = "userservice",
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
                 ClientSecrets = {new Secret("123987".Sha256()) { } },
                 AllowedScopes = { "UserAPI", "ProjectAPI" },

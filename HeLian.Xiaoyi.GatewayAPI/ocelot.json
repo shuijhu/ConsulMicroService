@@ -1,0 +1,27 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "ServiceName": "UserService",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "UserServiceDiscovery": true,
+      "AuthenticationOption": {
+        "AuthenticationProviderKey": "UserKey",
+        "AllowedScoped": ["UserAPI"]
+      }
+
+    }
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500
+    }
+  }
+
+}
