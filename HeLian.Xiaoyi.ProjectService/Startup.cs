@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace HeLian.Xiaoyi.UserService
+namespace HeLian.Xiaoyi.ProjectService
 {
     public class Startup
     {

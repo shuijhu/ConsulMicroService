@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeLian.Xiaoyi.GatewayAPI", "HeLian.Xiaoyi.GatewayAPI\HeLian.Xiaoyi.GatewayAPI.csproj", "{D6778901-A732-434D-8B85-D19D9D586E7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.GatewayAPI", "HeLian.Xiaoyi.GatewayAPI\HeLian.Xiaoyi.GatewayAPI.csproj", "{D6778901-A732-434D-8B85-D19D9D586E7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeLian.Xiaoyi.IdentityService", "HeLian.Xiaoyi.IdentityService\HeLian.Xiaoyi.IdentityService.csproj", "{C16C2EF1-EBDC-468F-B5EE-247A3ECE5473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.IdentityService", "HeLian.Xiaoyi.IdentityService\HeLian.Xiaoyi.IdentityService.csproj", "{C16C2EF1-EBDC-468F-B5EE-247A3ECE5473}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeLian.Xiaoyi.UserService", "HeLian.Xiaoyi.UserService\HeLian.Xiaoyi.UserService.csproj", "{3FE6D4FD-5EBD-47D3-BC2C-F703A1792532}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.UserService", "HeLian.Xiaoyi.UserService\HeLian.Xiaoyi.UserService.csproj", "{3FE6D4FD-5EBD-47D3-BC2C-F703A1792532}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeLian.Xiaoyi.MiddleWalls", "HeLian.Xiaoyi.MiddleWalls\HeLian.Xiaoyi.MiddleWalls.csproj", "{6C9ED767-C3C4-4CC3-89AE-17E09A175566}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{AAD5F0AB-67CB-4449-853B-26EA3D65C361}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeLian.Xiaoyi.ProjectService", "HeLian.Xiaoyi.ProjectService\HeLian.Xiaoyi.ProjectService.csproj", "{01259496-5AEC-4363-982B-BCE2F721FC54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +33,20 @@ Global
 		{3FE6D4FD-5EBD-47D3-BC2C-F703A1792532}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FE6D4FD-5EBD-47D3-BC2C-F703A1792532}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FE6D4FD-5EBD-47D3-BC2C-F703A1792532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C9ED767-C3C4-4CC3-89AE-17E09A175566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C9ED767-C3C4-4CC3-89AE-17E09A175566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C9ED767-C3C4-4CC3-89AE-17E09A175566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C9ED767-C3C4-4CC3-89AE-17E09A175566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01259496-5AEC-4363-982B-BCE2F721FC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01259496-5AEC-4363-982B-BCE2F721FC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01259496-5AEC-4363-982B-BCE2F721FC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01259496-5AEC-4363-982B-BCE2F721FC54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6C9ED767-C3C4-4CC3-89AE-17E09A175566} = {AAD5F0AB-67CB-4449-853B-26EA3D65C361}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4F3274A-02EA-45C3-8F04-E961122DE980}
