@@ -1,9 +1,9 @@
 {
   "ReRoutes": [
     {
-      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamPathTemplate": "/{url}",
       "DownstreamScheme": "http",
-      "UpstreamPathTemplate": "/",
+      "UpstreamPathTemplate": "/user/{url}",
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "ServiceName": "UserService",
       "LoadBalancerOptions": {
@@ -12,12 +12,27 @@
       "UserServiceDiscovery": true,
       "AuthenticationOption": {
         "AuthenticationProviderKey": "UserKey",
-        "AllowedScoped": ["UserAPI"]
+        "AllowedScoped": [ "UserAPI" ]
       }
-
+    },
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/project/{url}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "ServiceName": "ProjectService",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "UserServiceDiscovery": true,
+      "AuthenticationOption": {
+        "AuthenticationProviderKey": "ProjectKey",
+        "AllowedScoped": [ "ProjectAPI" ]
+      }
     }
   ],
   "GlobalConfiguration": {
+    "BaseUrl": "https://api.mybusiness.com",
     "ServiceDiscoveryProvider": {
       "Host": "localhost",
       "Port": 8500
