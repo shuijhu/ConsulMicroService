@@ -26,6 +26,14 @@ namespace HeLian.Xiaoyi.ProjectService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddAuthentication(Configuration["Identity:Scheme"])
+                .AddIdentityServerAuthentication(ops=>
+                {
+                    ops.RequireHttpsMetadata = false;
+                    ops.Authority= $"http://{Configuration["Identity:IP"]}:{Configuration["Identity:Port"]}";
+                    ops.ApiName = Configuration["Service:Name"];
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,7 +43,7 @@ namespace HeLian.Xiaoyi.ProjectService
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseAuthentication();
             app.UseMvc();
 
             app.RegisterConsul(lifetime, new ServiceEntity()
