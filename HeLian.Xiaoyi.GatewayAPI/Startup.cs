@@ -23,16 +23,7 @@ namespace HeLian.Xiaoyi.GatewayAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            Action<IdentityServerAuthenticationOptions> isaOptUser = option =>
-            {
-                option.Authority = Configuration["IdentityService:Uri"];
-                option.ApiName = "UserAPI";
-                option.RequireHttpsMetadata = Convert.ToBoolean(Configuration["IdentityService:UseHttps"]);
-                option.SupportedTokens = SupportedTokens.Both;
-                option.ApiSecret = Configuration["IdentityService:ApiSecrets:userservice"];
-            };
-            services.AddAuthentication()
-                .AddIdentityServerAuthentication("UserKey", isaOptUser);
+
             services.AddOcelot().AddConsul();
         }
 

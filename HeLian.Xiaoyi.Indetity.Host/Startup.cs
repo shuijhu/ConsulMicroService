@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HeLian.Xiaoyi.MiddleWalls;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -22,6 +23,8 @@ namespace HeLian.Xiaoyi.Indetity.Host
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+
             InMemoryConfiguration.Configuration = this.Configuration;
             services.AddIdentityServer()
             .AddDeveloperSigningCredential()
@@ -31,7 +34,7 @@ namespace HeLian.Xiaoyi.Indetity.Host
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime lifetime)
         {
             if (env.IsDevelopment())
             {
@@ -39,6 +42,17 @@ namespace HeLian.Xiaoyi.Indetity.Host
             }
 
             app.UseIdentityServer();
+
+            app.UseMvc();
+
+            app.RegisterConsul(lifetime, new ServiceEntity()
+            {
+                IP = Configuration["Service:IP"],
+                Port = Convert.ToInt32(Configuration["Service:Port"]),
+                ServiceName = Configuration["Service:Name"],
+                ConsulIP = Configuration["Consul:IP"],
+                ConsulPort = Convert.ToInt32(Configuration["Consul:Port"])
+            });
         }
     }
 }

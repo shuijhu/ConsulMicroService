@@ -12,6 +12,18 @@ namespace HeLian.Xiaoyi.Indetity.Host
     {
         public static IConfiguration Configuration { get; set; }
         /// <summary>
+        /// Define which IdentityResources will use this IdentityServer
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<IdentityResource> GetResources()
+        {
+            return new List<IdentityResource>
+            {
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile()
+            };
+        }
+        /// <summary>
         /// Define which APIs will use this IdentityServer
         /// </summary>
         /// <returns></returns>
@@ -19,9 +31,8 @@ namespace HeLian.Xiaoyi.Indetity.Host
         {
             return new[]
             {
-                new ApiResource("ProjectService", "CAS Client Service"),
-                new ApiResource("productservice", "CAS Product Service"),
-                new ApiResource("agentservice", "CAS Agent Service")
+                new ApiResource("ProjectService", "Project Service"),
+                new ApiResource("UserService", "User Service")
             };
         }
 
@@ -35,25 +46,11 @@ namespace HeLian.Xiaoyi.Indetity.Host
             {
                 new Client
                 {
-                    ClientId = "client.api.service",
+                    ClientId = "webclient",
                     ClientSecrets = new [] { new Secret("clientsecret".Sha256()) },
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                    AllowedScopes = new [] { "ProjectService" }
+                    AllowedScopes = new [] { "ProjectService", "UserService" }
                 },
-                new Client
-                {
-                    ClientId = "product.api.service",
-                    ClientSecrets = new [] { new Secret("productsecret".Sha256()) },
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                    AllowedScopes = new [] { "clientservice", "productservice" }
-                },
-                new Client
-                {
-                    ClientId = "agent.api.service",
-                    ClientSecrets = new [] { new Secret("agentsecret".Sha256()) },
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                    AllowedScopes = new [] { "agentservice", "clientservice", "productservice" }
-                }
             };
         }
 
