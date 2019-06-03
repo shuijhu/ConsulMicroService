@@ -53,34 +53,5 @@ namespace HeLian.Xiaoyi.Indetity.Host
                 },
             };
         }
-
-        /// <summary>
-        /// Define which uses will use this IdentityServer
-        /// </summary>
-        /// <returns></returns>
-        public static IEnumerable<TestUser> GetUsers()
-        {
-            return new[]
-            {
-                new TestUser
-                {
-                    SubjectId = "10001",
-                    Username = "edison@hotmail.com",
-                    Password = "edisonpassword"
-                },
-                new TestUser
-                {
-                    SubjectId = "10002",
-                    Username = "andy@hotmail.com",
-                    Password = "andypassword"
-                },
-                new TestUser
-                {
-                    SubjectId = "10003",
-                    Username = "leo@hotmail.com",
-                    Password = "leopassword"
-                }
-            };
-        }
     }
 }

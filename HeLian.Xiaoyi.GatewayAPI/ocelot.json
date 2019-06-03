@@ -40,7 +40,7 @@
       "UserServiceDiscovery": true
     },
     {
-      "DownstreamPathTemplate": "/{url}",
+      "DownstreamPathTemplate": "/api/{url}",
       "DownstreamScheme": "http",
       "UpstreamPathTemplate": "/project/{url}",
       "UpstreamHttpMethod": [ "Get", "Post" ],

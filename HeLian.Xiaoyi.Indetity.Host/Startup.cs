@@ -31,7 +31,6 @@ namespace HeLian.Xiaoyi.Indetity.Host
             InMemoryConfiguration.Configuration = this.Configuration;
             services.AddIdentityServer()
             .AddDeveloperSigningCredential()
-            .AddTestUsers(InMemoryConfiguration.GetUsers().ToList())
             .AddInMemoryClients(InMemoryConfiguration.GetClients())
             .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources())
             .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
