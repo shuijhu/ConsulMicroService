@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HeLian.Xiaoyi.MiddleWalls\HeLian.Xiaoyi.MiddleWalls.csproj" />
+    <ProjectReference Include="..\HeLian.Xiaoyi.MiddleWalls\HeLian.Xiaoyi.Helper.csproj" />
   </ItemGroup>
 
 </Project>

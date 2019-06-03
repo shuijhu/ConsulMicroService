@@ -29,7 +29,7 @@
       "ReRoutesCaseSensitive": false // non case sensitive
     },
     {
-      "DownstreamPathTemplate": "/{url}",
+      "DownstreamPathTemplate": "/api/{url}",
       "DownstreamScheme": "http",
       "UpstreamPathTemplate": "/user/{url}",
       "UpstreamHttpMethod": [ "Get", "Post" ],

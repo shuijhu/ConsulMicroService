@@ -14,7 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HeLian.Xiaoyi.MiddleWalls\HeLian.Xiaoyi.MiddleWalls.csproj" />
+    <ProjectReference Include="..\HeLian.Xiaoyi.MiddleWalls\HeLian.Xiaoyi.Helper.csproj" />
+    <ProjectReference Include="..\Helian.Xiaoyi.ViewModel\Helian.Xiaoyi.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

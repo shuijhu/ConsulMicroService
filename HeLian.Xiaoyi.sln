@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.GatewayAPI", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.UserService", "HeLian.Xiaoyi.UserService\HeLian.Xiaoyi.UserService.csproj", "{3FE6D4FD-5EBD-47D3-BC2C-F703A1792532}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.MiddleWalls", "HeLian.Xiaoyi.MiddleWalls\HeLian.Xiaoyi.MiddleWalls.csproj", "{6C9ED767-C3C4-4CC3-89AE-17E09A175566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.Helper", "HeLian.Xiaoyi.MiddleWalls\HeLian.Xiaoyi.Helper.csproj", "{6C9ED767-C3C4-4CC3-89AE-17E09A175566}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{AAD5F0AB-67CB-4449-853B-26EA3D65C361}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.ProjectService", "HeLian.Xiaoyi.ProjectService\HeLian.Xiaoyi.ProjectService.csproj", "{01259496-5AEC-4363-982B-BCE2F721FC54}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeLian.Xiaoyi.Indetity.Host", "HeLian.Xiaoyi.Indetity.Host\HeLian.Xiaoyi.Indetity.Host.csproj", "{1CD4F729-81A0-4720-9EB6-6D37AAF355B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helian.Xiaoyi.ViewModel", "Helian.Xiaoyi.ViewModel\Helian.Xiaoyi.ViewModel.csproj", "{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,12 +43,17 @@ Global
 		{1CD4F729-81A0-4720-9EB6-6D37AAF355B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CD4F729-81A0-4720-9EB6-6D37AAF355B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CD4F729-81A0-4720-9EB6-6D37AAF355B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6C9ED767-C3C4-4CC3-89AE-17E09A175566} = {AAD5F0AB-67CB-4449-853B-26EA3D65C361}
+		{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5} = {AAD5F0AB-67CB-4449-853B-26EA3D65C361}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4F3274A-02EA-45C3-8F04-E961122DE980}

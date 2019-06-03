@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
-using HeLian.Xiaoyi.MiddleWalls;
+using Consul;
+using HeLian.Xiaoyi.Helper;
+using HeLian.Xiaoyi.Indetity.Host.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,7 +33,15 @@ namespace HeLian.Xiaoyi.Indetity.Host
             .AddDeveloperSigningCredential()
             .AddTestUsers(InMemoryConfiguration.GetUsers().ToList())
             .AddInMemoryClients(InMemoryConfiguration.GetClients())
-            .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources());
+            .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources())
+            .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
+            .AddProfileService<ProfileService>();
+
+            //
+            services.AddTransient<ILoginUserService, LoginUserService>();
+            services.AddTransient<ConsulHelper>();
+            services.AddSingleton(new ConsulClient(c => c.Address = new Uri($"http://{ Configuration["Consul:IP"] }:{Configuration["Consul:Port"] }")));
+            services.AddSingleton<HttpClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

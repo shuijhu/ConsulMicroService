@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using System;
 
-namespace HeLian.Xiaoyi.MiddleWalls
+namespace HeLian.Xiaoyi.Helper
 {
     public static class ConsulMiddleWall
     {

@@ -16,10 +16,16 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HeLian.Xiaoyi.MiddleWalls\HeLian.Xiaoyi.MiddleWalls.csproj" />
+    <ProjectReference Include="..\HeLian.Xiaoyi.MiddleWalls\HeLian.Xiaoyi.Helper.csproj" />
+    <ProjectReference Include="..\Helian.Xiaoyi.ViewModel\Helian.Xiaoyi.ViewModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
   </ItemGroup>
 
 </Project>
