@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Consul;
 using HeLian.Xiaoyi.Helper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,13 +28,18 @@ namespace HeLian.Xiaoyi.UserService
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            var consulClient = new ConsulClient(c => c.Address = new Uri($"http://{ Configuration["Consul:IP"] }:{Configuration["Consul:Port"] }"));
+            ConsulHelper helper = new ConsulHelper(consulClient);
             services.AddAuthentication(Configuration["Identity:Scheme"])
                 .AddIdentityServerAuthentication(ops =>
                 {
                     ops.RequireHttpsMetadata = false;
-                    ops.Authority = $"http://{Configuration["Identity:IP"]}:{Configuration["Identity:Port"]}";
+                    //ops.Authority = $"http://{Configuration["Identity:IP"]}:{Configuration["Identity:Port"]}";
+                    ops.Authority = helper.GetUri("IdentityService");
                     ops.ApiName = Configuration["Service:Name"];
                 });
+
+            services.AddSingleton(consulClient);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
