@@ -13,5 +13,6 @@ namespace HeLian.Xiaoyi.UserService.DataModel
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<UserLogin> UserLogins { get; set; }
     }
 }
