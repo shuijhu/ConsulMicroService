@@ -26,7 +26,7 @@ namespace HeLian.Xiaoyi.Indetity.Host.Service
 
                 return JsonConvert.DeserializeObject<UserMo>(res);
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 return null;
             }

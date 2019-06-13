@@ -13,9 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{AAD5F0AB-6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.ProjectService", "HeLian.Xiaoyi.ProjectService\HeLian.Xiaoyi.ProjectService.csproj", "{01259496-5AEC-4363-982B-BCE2F721FC54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeLian.Xiaoyi.Indetity.Host", "HeLian.Xiaoyi.Indetity.Host\HeLian.Xiaoyi.Indetity.Host.csproj", "{1CD4F729-81A0-4720-9EB6-6D37AAF355B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.Indetity.Host", "HeLian.Xiaoyi.Indetity.Host\HeLian.Xiaoyi.Indetity.Host.csproj", "{1CD4F729-81A0-4720-9EB6-6D37AAF355B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helian.Xiaoyi.ViewModel", "Helian.Xiaoyi.ViewModel\Helian.Xiaoyi.ViewModel.csproj", "{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helian.Xiaoyi.ViewModel", "Helian.Xiaoyi.ViewModel\Helian.Xiaoyi.ViewModel.csproj", "{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front", "Front", "{43BEF4CB-DC31-46D8-AE86-6040A56F5E0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
