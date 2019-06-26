@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Helian.Xiaoyi.ViewModel\Helian.Xiaoyi.ViewModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
+
 </Project>

@@ -10,6 +10,10 @@ namespace HeLian.Xiaoyi.UserService.NavtiveControllers
     [Route("native/{controller}")]
     public class UserController:ControllerBase
     {
+        public UserController()
+        {
+
+        }
         [HttpGet("{username}")]
         public async Task<ActionResult<UserMo>> GetUser(string username)
         {

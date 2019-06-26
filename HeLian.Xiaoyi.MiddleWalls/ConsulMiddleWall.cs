@@ -13,7 +13,7 @@ namespace HeLian.Xiaoyi.Helper
             var httpCheck = new AgentServiceCheck()
             {
                 DeregisterCriticalServiceAfter = TimeSpan.FromSeconds(5),//服务启动多久后注册
-                Interval = TimeSpan.FromSeconds(10),//健康检查时间间隔，或者称为心跳间隔
+                Interval = TimeSpan.FromSeconds(60),//健康检查时间间隔，或者称为心跳间隔
                 HTTP = $"http://{serviceEntity.IP}:{serviceEntity.Port}/api/health",//健康检查地址
                 Timeout = TimeSpan.FromSeconds(5)
             };
@@ -33,7 +33,7 @@ namespace HeLian.Xiaoyi.Helper
             lifetime.ApplicationStopping.Register(() =>
             {
                 consulClient.Agent.ServiceDeregister(registration.ID).Wait();//服务停止时取消注册
-                });
+            });
 
             return app;
         }
