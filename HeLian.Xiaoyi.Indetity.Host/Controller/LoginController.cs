@@ -24,7 +24,7 @@ namespace HeLian.Xiaoyi.Indetity.Host.Controller
         public async Task<IActionResult> Web([FromBody]LoginMo model)
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
-            dict["client_id"] = _configuration["IdentityClients:0:Name"];
+            dict["client_id"] = _configuration["IdentityClients:0:ClientId"];
             dict["client_secret"] = _configuration["IdentityClients:0:ClientSecret"];
             dict["grant_type"] = _configuration["IdentityClients:0:GrantType"];
             dict["username"] = model.UserName;

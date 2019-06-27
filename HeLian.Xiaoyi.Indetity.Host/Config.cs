@@ -1,10 +1,6 @@
 ﻿using IdentityServer4.Models;
-using IdentityServer4.Test;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeLian.Xiaoyi.Indetity.Host
 {
@@ -29,11 +25,13 @@ namespace HeLian.Xiaoyi.Indetity.Host
         /// <returns></returns>
         public static IEnumerable<ApiResource> GetApiResources()
         {
-            return new[]
+            var resources = new List<ApiResource>();
+            var items = Configuration.GetSection("APIResources").Get<IList<ResourceMo>>();
+            foreach (var item in items)
             {
-                new ApiResource("ProjectService", "Project Service"),
-                new ApiResource("UserService", "User Service")
-            };
+                resources.Add(new ApiResource(item.Name, item.Description));
+            }
+            return resources;
         }
 
         /// <summary>
@@ -42,17 +40,30 @@ namespace HeLian.Xiaoyi.Indetity.Host
         /// <returns></returns>
         public static IEnumerable<Client> GetClients()
         {
-            return new[]
+            var clients = new List<Client>();
+            var items = Configuration.GetSection("IdentityClients").Get<IList<ClientMo>>();
+            foreach(var item in items)
             {
-                new Client
+                clients.Add(new Client
                 {
-                    ClientId = "webspa",
-                    ClientSecrets = new [] { new Secret("clientsecret".Sha256()) },
+                    ClientId = item.ClientId,
+                    ClientSecrets = new[] { new Secret(item.ClientSecret.Sha256()) },
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                    AllowedScopes = new [] { "ProjectService", "UserService" }
-                },
-            };
+                    AllowedScopes = new[] { "ProjectService", "UserService" }
+                });
+            }
+            return clients;
 
         }
+    }
+    public class ClientMo
+    {
+        public string ClientId { get; set; }
+        public string ClientSecret { get; set; }
+    }
+    public class ResourceMo
+    {
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }
