@@ -5,6 +5,8 @@ EXPOSE 80
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
 COPY ["HeLian.Xiaoyi.Indetity.Host/HeLian.Xiaoyi.Indetity.Host.csproj", "HeLian.Xiaoyi.Indetity.Host/"]
+COPY ["HeLian.Xiaoyi.MiddleWalls/HeLian.Xiaoyi.Helper.csproj", "HeLian.Xiaoyi.MiddleWalls/"]
+COPY ["Helian.Xiaoyi.ViewModel/Helian.Xiaoyi.ViewModel.csproj", "Helian.Xiaoyi.ViewModel/"]
 RUN dotnet restore "HeLian.Xiaoyi.Indetity.Host/HeLian.Xiaoyi.Indetity.Host.csproj"
 COPY . .
 WORKDIR "/src/HeLian.Xiaoyi.Indetity.Host"
