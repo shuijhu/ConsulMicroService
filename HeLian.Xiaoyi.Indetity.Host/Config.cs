@@ -46,12 +46,13 @@ namespace HeLian.Xiaoyi.Indetity.Host
             {
                 new Client
                 {
-                    ClientId = "webclient",
+                    ClientId = "webspa",
                     ClientSecrets = new [] { new Secret("clientsecret".Sha256()) },
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
                     AllowedScopes = new [] { "ProjectService", "UserService" }
                 },
             };
+
         }
     }
 }

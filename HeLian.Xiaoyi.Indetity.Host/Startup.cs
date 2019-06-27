@@ -33,8 +33,8 @@ namespace HeLian.Xiaoyi.Indetity.Host
             .AddDeveloperSigningCredential()
             .AddInMemoryClients(InMemoryConfiguration.GetClients())
             .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources())
-            .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
-            .AddProfileService<ProfileService>();
+            .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>();
+            //.AddProfileService<ProfileService>();
 
             //
             services.AddTransient<ILoginUserService, LoginUserService>();
