@@ -1,23 +1,32 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.GatewayAPI", "HeLian.Xiaoyi.GatewayAPI\HeLian.Xiaoyi.GatewayAPI.csproj", "{D6778901-A732-434D-8B85-D19D9D586E7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GatewayAPI", "GatewayAPI\GatewayAPI.csproj", "{D6778901-A732-434D-8B85-D19D9D586E7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.UserService", "HeLian.Xiaoyi.UserService\HeLian.Xiaoyi.UserService.csproj", "{3FE6D4FD-5EBD-47D3-BC2C-F703A1792532}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserService", "UserService\UserService.csproj", "{3FE6D4FD-5EBD-47D3-BC2C-F703A1792532}"
+	ProjectSection(ProjectDependencies) = postProject
+		{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5} = {27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}
+		{6C9ED767-C3C4-4CC3-89AE-17E09A175566} = {6C9ED767-C3C4-4CC3-89AE-17E09A175566}
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.Helper", "HeLian.Xiaoyi.MiddleWalls\HeLian.Xiaoyi.Helper.csproj", "{6C9ED767-C3C4-4CC3-89AE-17E09A175566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helper", "MiddleWalls\Helper.csproj", "{6C9ED767-C3C4-4CC3-89AE-17E09A175566}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{AAD5F0AB-67CB-4449-853B-26EA3D65C361}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.ProjectService", "HeLian.Xiaoyi.ProjectService\HeLian.Xiaoyi.ProjectService.csproj", "{01259496-5AEC-4363-982B-BCE2F721FC54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectService", "ProjectService\ProjectService.csproj", "{01259496-5AEC-4363-982B-BCE2F721FC54}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6C9ED767-C3C4-4CC3-89AE-17E09A175566} = {6C9ED767-C3C4-4CC3-89AE-17E09A175566}
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeLian.Xiaoyi.Indetity.Host", "HeLian.Xiaoyi.Indetity.Host\HeLian.Xiaoyi.Indetity.Host.csproj", "{1CD4F729-81A0-4720-9EB6-6D37AAF355B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Indetity.Host", "Indetity.Host\Indetity.Host.csproj", "{1CD4F729-81A0-4720-9EB6-6D37AAF355B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5} = {27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}
+		{6C9ED767-C3C4-4CC3-89AE-17E09A175566} = {6C9ED767-C3C4-4CC3-89AE-17E09A175566}
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helian.Xiaoyi.ViewModel", "Helian.Xiaoyi.ViewModel\Helian.Xiaoyi.ViewModel.csproj", "{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}"
-EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FEA0C318-FFED-4D39-8781-265718CA43DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModel", "ViewModel\ViewModel.csproj", "{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +58,6 @@ Global
 		{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27A0C629-B9E9-4333-A7A8-F4BCDD91DEC5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FEA0C318-FFED-4D39-8781-265718CA43DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FEA0C318-FFED-4D39-8781-265718CA43DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FEA0C318-FFED-4D39-8781-265718CA43DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FEA0C318-FFED-4D39-8781-265718CA43DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
